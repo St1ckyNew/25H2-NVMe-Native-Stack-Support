@@ -6,6 +6,9 @@
 
 A PowerShell/WinForms utility for controlling the native NVMe path already implemented in Microsoft's `storport.sys`, without patching `nvmedisk.inf`, modifying driver binaries, disabling Secure Boot, enabling test signing, or replacing any Microsoft storage driver.
 
+<img width="1266" height="783" alt="image" src="https://github.com/user-attachments/assets/cffb8fae-0c2f-4987-b6af-ec4869be05bf" />
+
+
 > [!WARNING]
 > This is an undocumented Windows storage-stack switch discovered through reverse engineering. It is not a Microsoft-supported tuning interface. Storage-stack changes can cause boot failures, device loss, application failures, DirectStorage problems, or data loss.
 
@@ -256,6 +259,7 @@ which is:
 ```text
 0x039F8560 = 60786016
 ```
+<img width="633" height="427" alt="image" src="https://github.com/user-attachments/assets/222461ec-d3ff-453b-8562-a11e709ca6a4" />
 
 The important part for this project is that `EnableNVMeInterface` is evaluated **after** that feature decision and can override it for the device, subject to the miniport capability check and the global kill switch.
 
